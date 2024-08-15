@@ -1,0 +1,67 @@
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Conócenos</title>
+	<link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Round" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/css/estilo_general.css">
+	<link rel="stylesheet" href="assets/css/contacto.css">
+</head>
+
+<body>
+	<header id="sticky-menu">
+		<span onclick="location='index.php'">ArtisCom</span>
+		<nav>
+			<ul>
+				<i class="material-icons-round" onclick="location='index.php'">home</i>
+				<li><a href="index.php" alt="Inicio">Inicio</a></li>
+				<i class="material-icons-round" onclick="location='contacto.php'">man</i>
+				<li><a href="contacto.php" alt="Conócenos">Conócenos</a></li>
+				<i class="material-icons-round" onclick="location='muestrario.php'">storefront</i>
+				<li><a href="muestrario.php" alt="Muestrario">Muestrario</a></li>
+				<i class="material-icons-round" onclick="location='blog.php'">rss_feed</i>
+				<li><a href="blog.php" alt="Blog">Blog</a></li>
+				<?php
+				if (empty($_SESSION["login"])) {
+					echo "<i class=\"material-icons-round\" onclick=\"location='login.php'\">login</i>
+					<li><a href=\"login.php\" alt=\"Iniciar Sesión\">Iniciar Sesión</a></li>";
+				} else {
+					echo "<i class=\"material-icons-round\" onclick=\"location='logout.php'\">logout</i>
+					<li><a href=\"logout.php\" alt=\"Cerrar Sesión\">Cerrar Sesión</a></li>";
+					echo "<i class=\"material-icons-round\" onclick=\"location='usuario.php'\">manage_accounts</i>
+					<li><a href=\"usuario.php\" alt=\"Yo\">Yo</a></li>";
+				}
+				?>
+			</ul>
+		</nav>
+	</header>
+
+	<main id="contenido-principal">
+		<!-- Contenido principal de la página aquí -->
+		<div>
+			<i class="material-icons-round">person</i>
+			<h2>Información de contacto</h2>
+			<section id="info">
+				<span><i class="material-icons-round">domain</i>ArtisCom S.A.</span>
+				<span><i class="material-icons-round">call</i><a href="tel:+34990555050"> +34 990 555 050</a></span>
+				<span><i class="material-icons-round">alternate_email</i><a href="mailto:contacto@artiscom.es"> contacto@artiscom.es</a></span>
+				<span><i class="material-icons-round">location_on</i> Rúa Zaragoza, 31. 36203 Vigo, Pontevedra - España</span>
+				<div>			
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2954.5093771375377!2d-8.72708370821228!3d42.22492953101024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2f627349d538f9%3A0xb18543e2d95c1bbd!2sR%C3%BAa%20Zaragoza%2C%2031%2C%2036203%20Vigo%2C%20Pontevedra!5e0!3m2!1ses-419!2ses!4v1678276986465!5m2!1ses-419!2ses"></iframe>
+				</div>
+			</section>
+		</div>
+	</main>
+
+	<footer id="footer">
+		<img src="assets/img/cc_323x77.png" alt="Licencia CC Reconocimiento-NoComercial-SinObraDerivada 4.0 Internacional" title="Licencia CC Reconocimiento-NoComercial-SinObraDerivada 4.0 Internacional">
+		<p>Esta página está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">licencia de Creative Commons.</a></p>
+		<span><i class="material-icons-round" onclick="location='contacto.php'">man</i></span><a href="contacto.php" alt="contacto.php">Contacto</a>
+	</footer>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+.info_usuario {
+    margin: 0.5rem;
+}
+
+.info_usuario_titulo {
+    font-weight: 600;
+}
+
+.info_usuario_no {
+    font-style: italic;
+}
